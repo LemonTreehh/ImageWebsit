@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:weight="http://www.w3.org/1999/xhtml" xmlns:height="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>牛逼的图像网站</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+<div class="main">
+    <div class="nav">
+        <img src="img/logo.png" class="logo">
+    </div>
+    <div class="con">
+        <div class="menu">
+            <div class="total_model">
+                <div class="model">颜色空间转换</div>
+                <div class="model">几何变换</div>
+                <div class="model">图像二值化</div>
+                <div class="model">图像模糊</div>
+                <div class="model">形态学转换</div>
+                <div class="model">Canny边缘检测</div>
+                <div class="model">直方图</div>
+                <div class="model">二维码识别</div>
+                <div class="model">支持模块可扩展化</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="workspace">
+                <div id="preview">
+                  <img id="blah" border=0 src='#'>
+                  <!-- <div id="uplod_btn" onchange='PreviewImage(this)'>
+                      <span>上传图片</span>
+                      <input type="file">
+                  </div> -->
+                  <input type="file" onchange='PreviewImage(this)' value="上传图片">
+                </div>
+            </div>
+            <div class="bottom">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+        function PreviewImage(input) {
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    // console.log(e.target.result);
+                    document.getElementById('blah').setAttribute('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+
+        }
+</script>
+</html>
